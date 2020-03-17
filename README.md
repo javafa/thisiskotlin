@@ -13,7 +13,7 @@
 4장 레이아웃과 위젯 그리고 리소스
 
 5장 화면구성하기   
-[Activity]   
+[Activity](https://github.com/javafa/thisiskotlin/tree/master/Activity)   
 [Activity Life Cycle](https://github.com/javafa/thisiskotlin/tree/master/ActivityLifeCycle)   
    
 6장 권한   
