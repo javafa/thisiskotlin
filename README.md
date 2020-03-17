@@ -7,7 +7,8 @@
 1장 코틀린 안드로이드 이해하기
 
 2장 개발도구 설치 및 앱 실행하기
-
+[Say Hello](https://github.com/javafa/thisiskotlin/tree/master/SayHello)   
+   
 3장 코틀린 사용을 위한 기본문법
 
 4장 레이아웃과 위젯 그리고 리소스
