@@ -12,13 +12,13 @@
 
 4장 레이아웃과 위젯 그리고 리소스
 
-5장 화면구성하기
-[Activity]
-[Activity Life Cycle](https://github.com/javafa/thisiskotlin/tree/master/ActivityLifeCycle)
-
-6장 권한
-[Permission]
-
+5장 화면구성하기   
+[Activity]   
+[Activity Life Cycle](https://github.com/javafa/thisiskotlin/tree/master/ActivityLifeCycle)   
+   
+6장 권한   
+[Permission]   
+   
 7장 파일 입출력과 SharedPreferences
 
 8장 데이터베이스
