@@ -14,7 +14,7 @@
 
 5장 화면구성하기
 [Activity]
-[Activity Life Cycle](https://github.com/javafa/thisiskotlin/tree/master/ActivityLifeCycle, "Activity Life Cycle")
+[Activity Life Cycle](https://github.com/javafa/thisiskotlin/tree/master/ActivityLifeCycle)
 
 6장 권한
 [Permission]
