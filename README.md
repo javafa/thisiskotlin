@@ -27,14 +27,14 @@
 [Design](https://github.com/javafa/thisiskotlin/tree/master/BasicSyntax_DesignTool)   
 [Null Safety](https://github.com/javafa/thisiskotlin/tree/master/BasicSyntax_NullSafety)   
 
-4장 레이아웃과 위젯 그리고 리소스   
+### 4장 레이아웃과 위젯 그리고 리소스   
 [Null Safety](https://github.com/javafa/thisiskotlin/tree/master/BasicSyntax_NullSafety)   
 [Null Safety](https://github.com/javafa/thisiskotlin/tree/master/BasicSyntax_NullSafety)   
 [Null Safety](https://github.com/javafa/thisiskotlin/tree/master/BasicSyntax_NullSafety)   
 [Null Safety](https://github.com/javafa/thisiskotlin/tree/master/BasicSyntax_NullSafety)   
 [Null Safety](https://github.com/javafa/thisiskotlin/tree/master/BasicSyntax_NullSafety)   
 
-5장 화면구성하기   
+### 5장 화면구성하기   
 [Constraint Chain](https://github.com/javafa/thisiskotlin/tree/master/BasicLayout3_Linear)   
 [LinearLayout](https://github.com/javafa/thisiskotlin/tree/master/BasicLayout2_ConstraintChain)   
 [Layout Guideline](https://github.com/javafa/thisiskotlin/tree/master/BasicLayout1_Guideline)   
