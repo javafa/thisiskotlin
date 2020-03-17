@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Widgets1</string>
+    <string name="string_01">화면에 보여질 글자 01\n두번째 줄\n세번째 줄</string>
+    <string name="string_02">화면에 보여질 글자 02</string>
+</resources>
