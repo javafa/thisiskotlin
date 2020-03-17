@@ -4,12 +4,12 @@
 
 ## Project List
 
-1장 코틀린 안드로이드 이해하기   
+### 1장 코틀린 안드로이드 이해하기   
 
-2장 개발도구 설치 및 앱 실행하기   
+### 2장 개발도구 설치 및 앱 실행하기   
 [Say Hello](https://github.com/javafa/thisiskotlin/tree/master/SayHello)   
    
-3장 코틀린 사용을 위한 기본문법  
+### 3장 코틀린 사용을 위한 기본문법  
 [Basic Syntax](https://github.com/javafa/thisiskotlin/tree/master/BasicSyntax)   
 [Control Flow1](https://github.com/javafa/thisiskotlin/tree/master/BasicSyntax_ControlFlow1)   
 [Control Flow2](https://github.com/javafa/thisiskotlin/tree/master/BasicSyntax_ControlFlow2)   
@@ -38,28 +38,28 @@
 [Constraint Chain](https://github.com/javafa/thisiskotlin/tree/master/BasicLayout3_Linear)   
 [LinearLayout](https://github.com/javafa/thisiskotlin/tree/master/BasicLayout2_ConstraintChain)   
 [Layout Guideline](https://github.com/javafa/thisiskotlin/tree/master/BasicLayout1_Guideline)   
-[TextView](https://github.com/javafa/thisiskotlin/tree/master/WidgetsTextView)   
-[PlanText with TextWatcher](https://github.com/javafa/thisiskotlin/tree/master/WidgetsPlainText)   
+   
+[PlanText with TextWatcher](https://github.com/javafa/thisiskotlin/tree/master/WidgetsTextView)   
 [ImageButton](https://github.com/javafa/thisiskotlin/tree/master/WidgetsImageButton)   
 [Radio](https://github.com/javafa/thisiskotlin/tree/master/WidgetsRadio)   
 [CheckBox](https://github.com/javafa/thisiskotlin/tree/master/WidgetsCheckBox)   
 [SeekBar](https://github.com/javafa/thisiskotlin/tree/master/WidgetsSeekBar)   
 [RatingBar](https://github.com/javafa/thisiskotlin/tree/master/WidgetsRatingBar)   
    
-6장 권한   
+### 6장 권한   
 [Permission]   
    
-7장 파일 입출력과 SharedPreferences   
+### 7장 파일 입출력과 SharedPreferences   
 
-8장 데이터베이스   
+### 8장 데이터베이스   
 
-9장 카메라와 갤러리   
+### 9장 카메라와 갤러리   
 
-10장 스레드와 핸들러, AsyncTask   
+### 10장 스레드와 핸들러, AsyncTask   
 
-11장 서비스와 콘텐트 리졸버   
+### 11장 서비스와 콘텐트 리졸버   
 
-12장 구글지도, 네트워크, OpenAPI   
+### 12장 구글지도, 네트워크, OpenAPI   
 
-기타 - 책에 없는 것들   
+### 기타 - 책에 없는 것들   
 
