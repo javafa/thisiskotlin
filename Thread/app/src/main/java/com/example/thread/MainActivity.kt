@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
                 Log.i("KotlinThread", "$i")
             }
         }
-
     }
 }
 
