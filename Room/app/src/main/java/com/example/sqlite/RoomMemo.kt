@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "orm_memo")
 class RoomMemo {
-    @PrimaryKey(autoGenerate = false)
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo
     var no:Long?=null
     @ColumnInfo

@@ -93,7 +93,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         Manifest.permission.ACCESS_COARSE_LOCATION,
         Manifest.permission.ACCESS_FINE_LOCATION
     )
-    val PERM_LOCATION = 99
+//    val PERM_LOCATION = 99
     fun checkPermission() {
         var permitted_all = true
         for (permission in permissions) {
@@ -109,7 +109,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         }
     }
     fun requestPermission() {
-        ActivityCompat.requestPermissions(this, permissions, PERM_LOCATION)
+        ActivityCompat.requestPermissions(this, permissions, 99)
     }
     fun confirmAgain() {
         AlertDialog.Builder(this)
@@ -126,7 +126,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                                             , permissions: Array<out String>
                                             , grantResults: IntArray) {
         when (requestCode) {
-            PERM_LOCATION -> {
+            99 -> {
                 var granted_all = true
                 for (result in grantResults) {
                     if (result != PackageManager.PERMISSION_GRANTED) {
