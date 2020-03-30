@@ -33,8 +33,9 @@
 [Null Safety](https://github.com/javafa/thisiskotlin/tree/master/BasicSyntax_NullSafety)   
 
 ### 4장 레이아웃과 위젯 그리고 리소스   
-[Constraint Chain](https://github.com/javafa/thisiskotlin/tree/master/BasicLayout3_Linear)   
-[LinearLayout](https://github.com/javafa/thisiskotlin/tree/master/BasicLayout2_ConstraintChain)   
+[Constraint Chain](https://github.com/javafa/thisiskotlin/tree/master/BasicLayout2_ConstraintChain)   
+[LinearLayout](https://github.com/javafa/thisiskotlin/tree/master/LinearLayout)   
+[ScrollView](https://github.com/javafa/thisiskotlin/tree/master/BasicLayout3_Linear)   
 [Layout Guideline](https://github.com/javafa/thisiskotlin/tree/master/BasicLayout1_Guideline)   
    
 [PlanText with TextWatcher](https://github.com/javafa/thisiskotlin/tree/master/WidgetsTextView)   
