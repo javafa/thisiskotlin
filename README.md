@@ -34,7 +34,7 @@
 [LinearLayout](https://github.com/javafa/thisiskotlin/tree/master/LinearLayout)   
 [ScrollView](https://github.com/javafa/thisiskotlin/tree/master/ScrollView)   
 [4장 가이드라인 예제](https://github.com/javafa/thisiskotlin/tree/master/Guideline)   
-[WidgetsTextView](https://github.com/javafa/thisiskotlin/tree/master/WidgetsTextView)   
+[4장 2.3 에디트텍스트 예제](https://github.com/javafa/thisiskotlin/tree/master/WidgetsEditText)   
 [4장 2.4 이미지버튼 예제](https://github.com/javafa/thisiskotlin/tree/master/WidgetsImageButton)   
 [WidgetsRadio](https://github.com/javafa/thisiskotlin/tree/master/WidgetsRadio)   
 [WidgetsCheckBox](https://github.com/javafa/thisiskotlin/tree/master/WidgetsCheckBox)   
