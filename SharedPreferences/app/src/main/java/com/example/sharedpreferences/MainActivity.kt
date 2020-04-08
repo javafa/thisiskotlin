@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val shared = PreferenceManager.getDefaultSharedPreferences(this)
+
         val checkboxValue = shared.getBoolean("key_add_shortcut",false)
         val switchValue = shared.getBoolean("key_switch_on", false)
         val name = shared.getString("key_edit_name", "")
