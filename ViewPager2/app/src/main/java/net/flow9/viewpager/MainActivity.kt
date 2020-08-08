@@ -15,8 +15,8 @@ class MainActivity : FragmentActivity() {
         setContentView(R.layout.activity_main)
 
         val adapter = FragmentAdapter(this)
-        val fragments = listOf<Fragment>(OneFragment(), TwoFragment(), ThreeFragment())
-        val tabTitles = listOf<String>("One", "Two", "Three")
+        val fragments = listOf<Fragment>(OneFragment(), TwoFragment(), ThreeFragment(), FourFragment())
+        val tabTitles = listOf<String>("One", "Two", "Three", "Four")
 
         adapter.fragments.addAll(fragments)
         viewPager.adapter = adapter
