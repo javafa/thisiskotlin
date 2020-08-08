@@ -53,6 +53,7 @@
 [ViewPager Fragment](https://github.com/javafa/thisiskotlin/tree/master/ViewPagerFragment)   
 [ViewPager View](https://github.com/javafa/thisiskotlin/tree/master/ViewPagerView)   
 [ViewPager2](https://github.com/javafa/thisiskotlin/tree/master/ViewPager2)   
+[ViewPager2 View](https://github.com/javafa/thisiskotlin/tree/master/ViewPager2_View)   
    
 ### 6장   
 [Permission](https://github.com/javafa/thisiskotlin/tree/master/Permission)   
