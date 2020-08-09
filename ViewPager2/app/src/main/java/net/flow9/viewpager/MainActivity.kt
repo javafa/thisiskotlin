@@ -1,10 +1,7 @@
 package net.flow9.viewpager
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -14,27 +11,14 @@ class MainActivity : FragmentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val fragmentList = listOf(FragmentA(), FragmentB(), FragmentC(), FragmentD())
         val adapter = FragmentAdapter(this)
-        val fragments = listOf<Fragment>(OneFragment(), TwoFragment(), ThreeFragment(), FourFragment())
-        val tabTitles = listOf<String>("One", "Two", "Three", "Four")
-
-        adapter.fragments.addAll(fragments)
+        adapter.fragmentList = fragmentList
         viewPager.adapter = adapter
 
+        val tabTitles = listOf<String>("A", "B", "C", "D")
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = tabTitles[position]
         }.attach()
-    }
-}
-
-class FragmentAdapter(fragmentActivity:FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
-    val fragments = mutableListOf<Fragment>()
-
-    override fun getItemCount(): Int {
-        return fragments.size
-    }
-
-    override fun createFragment(position: Int): Fragment {
-        return fragments[position]
     }
 }

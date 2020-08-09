@@ -3,14 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TwoFragment">
+    tools:context=".FourFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:gravity="center"
-        android:text="Two"
-        android:textSize="36sp" />
+        android:text="프래그먼트 D"
+        android:textSize="30sp" />
 
 </FrameLayout>
