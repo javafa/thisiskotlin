@@ -77,8 +77,8 @@ class MainActivity : AppCompatActivity() {
     fun getPhoneNumbers(sort:String, searchName:String?) : List<Phone> {
         // 결과목록 미리 정의
         val list = mutableListOf<Phone>()
-        // 1. 주소록 Uri
-        val addressUri = ContactsContract.Contacts.CONTENT_URI
+        // 1. 주소록 Uri - 여기서는 사용안함, 비교를 위해 작성
+        //val addressUri = ContactsContract.Contacts.CONTENT_URI
         // 1. 전화번호 Uri
         val phoneUri = ContactsContract.CommonDataKinds.Phone.CONTENT_URI
         // 2.1 전화번호에서 가져올 컬럼 정의
