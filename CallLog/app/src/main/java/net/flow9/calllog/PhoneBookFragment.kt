@@ -9,8 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_phone_book.view.*
-import net.flow9.phonebookinfragment.Phone
-import net.flow9.phonebookinfragment.PhoneAdapter
 
 class PhoneBookFragment : Fragment() {
 

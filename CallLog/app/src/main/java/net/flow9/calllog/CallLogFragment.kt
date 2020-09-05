@@ -1,4 +1,4 @@
-package net.flow9.phonebookinfragment
+package net.flow9.calllog
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -9,9 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_calllog.view.*
-import net.flow9.calllog.Call
-import net.flow9.calllog.CallLogAdapter
-import net.flow9.calllog.R
 
 
 class CallLogFragment : Fragment() {

@@ -1,4 +1,4 @@
-package net.flow9.phonebookinfragment
+package net.flow9.calllog
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_phonebook_layout.view.*
-import net.flow9.calllog.R
 
 data class Phone(val id:String?, val name:String?, val phone:String?)
 
