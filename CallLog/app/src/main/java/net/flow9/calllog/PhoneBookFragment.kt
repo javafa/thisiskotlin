@@ -1,6 +1,7 @@
 package net.flow9.calllog
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Bundle
 import android.provider.ContactsContract
 import androidx.fragment.app.Fragment
@@ -70,5 +71,24 @@ class PhoneBookFragment : Fragment() {
             }
         }
         return list
+    }
+
+    data class ContactIdInGroup(val rowId:String, val contactId:String)
+    fun getContactIdsInGroup(context: Context, groupId:String) : List<ContactIdInGroup> {
+        val result = mutableListOf<ContactIdInGroup>()
+        val uri = ContactsContract.Data.CONTENT_URI
+        val proj = arrayOf(ContactsContract.CommonDataKinds.GroupMembership.GROUP_ROW_ID
+                        , ContactsContract.CommonDataKinds.GroupMembership.CONTACT_ID)
+        val where = "${ContactsContract.Data.DATA1}=? and ${ContactsContract.Data.MIMETYPE}=?"
+        val values = arrayOf(groupId, ContactsContract.CommonDataKinds.GroupMembership.CONTENT_ITEM_TYPE)
+        val cursor = context.contentResolver.query(uri, proj, where, values,null)
+
+        while (cursor?.moveToNext() == true) {
+            val rowId = cursor?.getString(0)
+            val contactId = cursor?.getString(1)
+            val contact = ContactIdInGroup(rowId, contactId)
+            result.add(contact)
+        }
+        return result
     }
 }
