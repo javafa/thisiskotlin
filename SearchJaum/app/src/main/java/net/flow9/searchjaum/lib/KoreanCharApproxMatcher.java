@@ -25,6 +25,10 @@
 
 package net.flow9.searchjaum.lib;
 
+import android.text.TextUtils;
+
+import androidx.core.text.TextUtilsCompat;
+
 /**
  * 한글 음절 근사 매칭 클래스.
  * <p>
@@ -66,7 +70,8 @@ public class KoreanCharApproxMatcher {
 
     private static String decompose(char c) {
         if (KoreanChar.isSyllable(c))
-            return String.join("", KoreanChar.decomposeCompat(c));
+            return TextUtils.join("", KoreanChar.decomposeCompat(c));
+//            return String.join("", KoreanChar.decomposeCompat(c));
         else if (KoreanChar.isCompatChoseong(c))
             return KoreanChar.splitJamo(c);
         else if (KoreanChar.isChoseong(c))
