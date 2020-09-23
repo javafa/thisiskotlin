@@ -90,3 +90,4 @@
 [PhoneBook](https://github.com/javafa/thisiskotlin/tree/master/PhoneBook)   
 [CallLog](https://github.com/javafa/thisiskotlin/tree/master/CallLog)   
 [전화번호부초성검색](https://github.com/javafa/thisiskotlin/tree/master/SearchJaum)   
+[카메라 원본이미지 사용하기](https://github.com/javafa/thisiskotlin/tree/master/CameraUseOriginal)   
