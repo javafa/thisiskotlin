@@ -32,6 +32,9 @@ class MainActivity : AppCompatActivity() {
     val FLAG_REQ_CAMERA = 101
     val FLAG_REQ_STORAGE = 102
 
+    // 카메라 원본이미지 Uri를 저장할 변
+    var photoURI: Uri? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -67,10 +70,10 @@ class MainActivity : AppCompatActivity() {
         if(resultCode == Activity.RESULT_OK) {
             when(requestCode){
                 FLAG_REQ_CAMERA -> {
-                    photoURI?.let {
-                        val bitmap = loadFromUri(it)
+                    if (photoURI != null) {
+                        val bitmap = loadBitmapFromMediaStoreBy(photoURI!!)
                         imagePreview.setImageBitmap(bitmap)
-//                        finishImageProcess(it)
+                        photoURI = null // 사용 후 null 처
                     }
                 }
                 FLAG_REQ_STORAGE -> {
@@ -81,8 +84,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    /*
-    * 여기서 부터 권한처리 관련 함수
+    /**
+    * 권한처리
     */
     fun checkPermission(permissions: Array<out String>, flag: Int) : Boolean {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -125,12 +128,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     *  원본 카메라 이미지 저장하
+     *  원본 카메라 이미지 저장
      */
-
-    // 사진 원본이미지 저장하기
-    var photoURI: Uri? = null
-
     // photoURI 에 이미지 세팅할 카메라 앱 호출하기
     private fun dispatchTakePictureIntent() {
         // 카메라 인텐트 생성
@@ -143,7 +142,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // 미디어스토어에 이미지 URI 생성하
+    // 미디어스토어에 카메라 이미지를 저장할 URI를 미리 생성하기
     fun createImageUri(filename: String, mimeType: String) : Uri? {
         var values = ContentValues()
         values.put(MediaStore.Images.Media.DISPLAY_NAME, filename)
@@ -152,6 +151,7 @@ class MainActivity : AppCompatActivity() {
         return contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
     }
 
+    // 새파일 이름 생성
     fun newFileName() : String {
         val sdf = SimpleDateFormat("yyyyMMdd_HHmmss")
         val filename = sdf.format(System.currentTimeMillis())
@@ -159,11 +159,11 @@ class MainActivity : AppCompatActivity() {
         return "$filename.jpg"
     }
 
-    // 미디어 스토어에서 이미지 가져오
-    fun loadFromUri(photoUri: Uri): Bitmap? {
+    // 미디어 스토어에서 url로 이미지 불러오기
+    fun loadBitmapFromMediaStoreBy(photoUri: Uri): Bitmap? {
         var image: Bitmap? = null
         try {
-            image = if (Build.VERSION.SDK_INT > 27) {
+            image = if (Build.VERSION.SDK_INT > 27) { // Api 버전별 이미지 처리
                 val source: ImageDecoder.Source =
                         ImageDecoder.createSource(this.contentResolver, photoUri)
                 ImageDecoder.decodeBitmap(source)
