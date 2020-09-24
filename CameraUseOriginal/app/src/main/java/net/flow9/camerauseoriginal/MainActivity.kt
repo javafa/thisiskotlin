@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
                     if (photoURI != null) {
                         val bitmap = loadBitmapFromMediaStoreBy(photoURI!!)
                         imagePreview.setImageBitmap(bitmap)
-                        photoURI = null // 사용 후 null 처
+                        photoURI = null // 사용 후 null 처리
                     }
                 }
                 FLAG_REQ_STORAGE -> {
@@ -100,7 +100,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onRequestPermissionsResult(
-            requestCode: Int, permissions: Array<out String>, grantResults: IntArray
+        requestCode: Int, permissions: Array<out String>, grantResults: IntArray
     ) {
         when (requestCode) {
             FLAG_PERM_STORAGE -> {
