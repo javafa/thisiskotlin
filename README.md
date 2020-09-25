@@ -90,6 +90,6 @@
 [PhoneBook](https://github.com/javafa/thisiskotlin/tree/master/PhoneBook)   
 [CallLog](https://github.com/javafa/thisiskotlin/tree/master/CallLog)   
 [전화번호부초성검색](https://github.com/javafa/thisiskotlin/tree/master/SearchJaum)   
-[Save Original Image from Camera](https://github.com/javafa/thisiskotlin/tree/master/CameraUseOriginal)   
+[Get image(high resolution) from Camera](https://github.com/javafa/thisiskotlin/tree/master/CameraUseOriginal)   
 [Navigation Drawer](https://github.com/javafa/thisiskotlin/tree/master/Drawer)   
 [SwipeRefreshLayout](https://github.com/javafa/thisiskotlin/tree/master/SwipeRefresh)   
