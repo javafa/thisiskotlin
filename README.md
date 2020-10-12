@@ -87,7 +87,7 @@
 [SeoulPublicLibraries](https://github.com/javafa/thisiskotlin/tree/master/SeoulPublicLibraries)   
 
 ### Android New Version
-[Fragment 1.3.x] (https://github.com/javafa/thisiskotlin/tree/master/Fragment_1_3)   
+[Send value in Fragment 1.3.x](https://github.com/javafa/thisiskotlin/tree/master/Fragment_1_3)   
 
 ### 기타 - 책에 없는 것들   
 [PhoneBook](https://github.com/javafa/thisiskotlin/tree/master/PhoneBook)   
