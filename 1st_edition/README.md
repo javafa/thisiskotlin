@@ -11,7 +11,7 @@
 [Say Hello](https://github.com/javafa/thisiskotlin/tree/master/1st_edition/SayHello)   
    
 ### 3장   
-[Basic Syntax](https://github.com/javafa/thisiskotlin/tree/1st_edition/master/1st_edition/BasicSyntax)   
+[Basic Syntax](https://github.com/javafa/thisiskotlin/tree/master/1st_edition/BasicSyntax)   
 [Control Flow1](https://github.com/javafa/thisiskotlin/tree/master/1st_edition/ControlFlow1)   
 [Control Flow2](https://github.com/javafa/thisiskotlin/tree/master/1st_edition/ControlFlow2)   
 [Control Flow3](https://github.com/javafa/thisiskotlin/tree/master/1st_edition/ControlFlow3)   
