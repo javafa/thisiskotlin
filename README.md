@@ -30,8 +30,8 @@
 [InheritanceandExtension](https://github.com/javafa/thisiskotlin/tree/master/InheritanceAndExtension)   
 [DesignTool](https://github.com/javafa/thisiskotlin/tree/master/DesignTool)   
 [3장 8 Null Safety](https://github.com/javafa/thisiskotlin/tree/master/NullSafety)   
-[lateinit, lazy]
-[Scope Function]
+[lateinit, lazy]   
+[Scope Function]   
    
 ### 4장   
 [ConstraintChain](https://github.com/javafa/thisiskotlin/tree/master/ConstraintChain)   
