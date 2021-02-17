@@ -2,18 +2,16 @@ package com.example.sqlite
 
 import java.text.SimpleDateFormat
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.item_recycler.view.*
+import com.example.sqlite.databinding.ItemRecyclerBinding
 
 class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.Holder>() {
     var helper:SqliteHelper? = null
     var listData = mutableListOf<Memo>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_recycler, parent, false)
-        return Holder(view)
+        val binding = ItemRecyclerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return Holder(binding)
     }
     override fun getItemCount(): Int {
         return listData.size
@@ -24,21 +22,21 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.Holder>() {
         holder.setMemo(memo)
     }
 
-    inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class Holder(val binding: ItemRecyclerBinding) : RecyclerView.ViewHolder(binding.root) {
         var mMemo:Memo? = null
         init {
-            itemView.buttonDelete.setOnClickListener {
+            binding.buttonDelete.setOnClickListener {
                 helper?.deleteMemo(mMemo!!)
                 listData.remove(mMemo)
                 notifyDataSetChanged()
             }
         }
         fun setMemo(memo:Memo) {
-            itemView.textNo.text = "${memo.no}"
-            itemView.textContent.text = memo.content
+            binding.textNo.text = "${memo.no}"
+            binding.textContent.text = memo.content
             val sdf = SimpleDateFormat("yyyy/MM/dd hh:mm")
             // 날짜 포맷은 SimpleDateFormat으로 설정합니다.
-            itemView.textDatetime.text = "${sdf.format(memo.datetime)}"
+            binding.textDatetime.text = "${sdf.format(memo.datetime)}"
 
             this.mMemo = memo
         }

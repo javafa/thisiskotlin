@@ -14,6 +14,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.MarkerOptions
 import kr.co.hanbit.seoulpubliclibraries.data.Library
+import kr.co.hanbit.seoulpubliclibraries.databinding.ActivityMapsBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -23,10 +24,13 @@ import retrofit2.converter.gson.GsonConverterFactory
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
+    private lateinit var binding: ActivityMapsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_maps)
+
+        binding = ActivityMapsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val mapFragment = supportFragmentManager
                 .findFragmentById(R.id.map) as SupportMapFragment
@@ -35,11 +39,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-
-        // Add a marker in Sydney and move the camera
-//        val sydney = LatLng(-34.0, 151.0)
-//        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-//        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
         loadLibraries()
     }
 
@@ -68,7 +67,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         for (lib in libraries.SeoulPublicLibraryInfo.row) {
             val position = LatLng(lib.XCNTS.toDouble(), lib.YDNTS.toDouble())
             val marker = MarkerOptions().position(position).title(lib.LBRRY_NAME)
-//            mMap.addMarker(marker)
+
             var obj = mMap.addMarker(marker)
             obj.tag = lib.HMPG_URL
 

@@ -6,24 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <fragment
-        android:id="@+id/list"
-        android:name="net.flow9.fragment_1_3.ListFragment"
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView2"
+        android:name="net.flow9.fragment_1_3.SenderFragment"
         android:layout_width="0dp"
         android:layout_height="300dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout="@layout/fragment_list" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <fragment
-        android:id="@+id/detail"
-        android:name="net.flow9.fragment_1_3.DetailFragment"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView3"
+        android:name="net.flow9.fragment_1_3.ReceiverFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/list"
-        tools:layout="@layout/fragment_detail" />
+        app:layout_constraintTop_toBottomOf="@+id/fragmentContainerView2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

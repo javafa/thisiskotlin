@@ -4,20 +4,18 @@ import android.media.MediaPlayer
 import android.net.Uri
 import java.text.SimpleDateFormat
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.item_recycler.view.*
+import com.example.contentresolver.databinding.ItemRecyclerBinding
 
 class MusicRecyclerAdapter : RecyclerView.Adapter<MusicRecyclerAdapter.Holder>() {
     var musicList = mutableListOf<Music>()
     var mediaPlayer:MediaPlayer? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val view = LayoutInflater
-            .from(parent.context)
-            .inflate(R.layout.item_recycler, parent, false)
-        return Holder(view)
+        val binding = ItemRecyclerBinding.inflate(
+                        LayoutInflater.from(parent.context), parent, false)
+        return Holder(binding)
     }
 
     override fun getItemCount(): Int {
@@ -29,28 +27,29 @@ class MusicRecyclerAdapter : RecyclerView.Adapter<MusicRecyclerAdapter.Holder>()
         holder.setMusic(music)
     }
 
-    inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class Holder(val binding: ItemRecyclerBinding) : RecyclerView.ViewHolder(binding.root) {
         var musicUri: Uri? = null
 
         init {
-            itemView.setOnClickListener {
+            binding.root.setOnClickListener {
                 if(mediaPlayer != null) {
                     mediaPlayer?.release()
                     mediaPlayer = null
                 }
-                mediaPlayer = MediaPlayer.create(itemView.context, musicUri)
+                mediaPlayer = MediaPlayer.create(binding.root.context, musicUri)
                 mediaPlayer?.start()
             }
         }
 
         fun setMusic(music:Music) {
-            itemView.imageAlbum.setImageURI(music.getAlbumUri())
-            itemView.textArtist.text = music.artist
-            itemView.textTitle.text = music.title
+            binding.run {
+                imageAlbum.setImageURI(music.getAlbumUri())
+                textArtist.text = music.artist
+                textTitle.text = music.title
 
-            val duration = SimpleDateFormat("mm:ss").format(music.duration)
-            itemView.textDuration.text = duration
-
+                val duration = SimpleDateFormat("mm:ss").format(music.duration)
+                textDuration.text = duration
+            }
             this.musicUri = music.getMusicUri()
         }
     }

@@ -1,8 +1,10 @@
-# 이것이 안드로이드다 with 코틀린 - 한빛미디어
+# 이것이 안드로이드다 with 코틀린 - 개정판 (작업중)   
    
-안드로이드 10(Q), 11(R) 반영   
-안드로이드 스튜디오 3.6.1 , 4.0 Beta 반영   
-   
+안드로이드 11(R), 12 반영   
+안드로이드 스튜디오 4.1.x , 4.2 Beta 반영   
+
+[초판가기](https://github.com/javafa/thisiskotlin/tree/master/1st_edition)   
+
 ## Project List
    
 ### 1장 코틀린 안드로이드 이해하기   
@@ -28,6 +30,8 @@
 [InheritanceandExtension](https://github.com/javafa/thisiskotlin/tree/master/InheritanceAndExtension)   
 [DesignTool](https://github.com/javafa/thisiskotlin/tree/master/DesignTool)   
 [3장 8 Null Safety](https://github.com/javafa/thisiskotlin/tree/master/NullSafety)   
+[lateinit, lazy]
+[Scope Function]
    
 ### 4장   
 [ConstraintChain](https://github.com/javafa/thisiskotlin/tree/master/ConstraintChain)   
@@ -48,15 +52,15 @@
 [ContainerSpinner](https://github.com/javafa/thisiskotlin/tree/master/ContainerSpinner)   
 [ContainerRecyclerView](https://github.com/javafa/thisiskotlin/tree/master/ContainerRecyclerView)   
 [Fragment](https://github.com/javafa/thisiskotlin/tree/master/Fragment)   
+[FragmentListener](https://github.com/javafa/thisiskotlin/tree/master/Fragment_1_3)   
 [Custom View](https://github.com/javafa/thisiskotlin/tree/master/CustomView)   
 [CustomText](https://github.com/javafa/thisiskotlin/tree/master/CustomText)   
-[ViewPager Fragment](https://github.com/javafa/thisiskotlin/tree/master/ViewPagerFragment)   
-[ViewPager View](https://github.com/javafa/thisiskotlin/tree/master/ViewPagerView)   
 [ViewPager2](https://github.com/javafa/thisiskotlin/tree/master/ViewPager2)   
 [ViewPager2 View](https://github.com/javafa/thisiskotlin/tree/master/ViewPager2_View)   
    
 ### 6장   
 [Permission](https://github.com/javafa/thisiskotlin/tree/master/Permission)   
+[BaseActivity](https://github.com/javafa/thisiskotlin/tree/master/Base)   
    
 ### 7장   
 [File IO(Input Output)](https://github.com/javafa/thisiskotlin/tree/master/FileIO)   
@@ -73,7 +77,8 @@
 [10장 1.2 백그라운드 스레드 예제](https://github.com/javafa/thisiskotlin/tree/master/Thread)   
 [10장 1.3 메인 스레드와 백그라운드 스레드 예제](https://github.com/javafa/thisiskotlin/tree/master/ThreadWithUI)   
 [Timer](https://github.com/javafa/thisiskotlin/tree/master/Timer)   
-[AsyncTask](https://github.com/javafa/thisiskotlin/tree/master/AsyncTask)   
+[Coroutine](https://github.com/javafa/thisiskotlin/tree/master/Coroutine)   
+[Coroutine Tutorials](https://github.com/javafa/thisiskotlin/tree/master/CoroutineTutorials)   
    
 ### 11장	
 [ServiceTest](https://github.com/javafa/thisiskotlin/tree/master/ServiceTest)   
@@ -86,13 +91,6 @@
 [NetworkRetrofit](https://github.com/javafa/thisiskotlin/tree/master/NetworkRetrofit)   
 [SeoulPublicLibraries](https://github.com/javafa/thisiskotlin/tree/master/SeoulPublicLibraries)   
 
-### Android New Version
-[Send value in Fragment 1.3.x](https://github.com/javafa/thisiskotlin/tree/master/Fragment_1_3)   
-
 ### 기타 - 책에 없는 것들   
-[PhoneBook](https://github.com/javafa/thisiskotlin/tree/master/PhoneBook)   
-[CallLog](https://github.com/javafa/thisiskotlin/tree/master/CallLog)   
-[전화번호부초성검색](https://github.com/javafa/thisiskotlin/tree/master/SearchJaum)   
-[Get image(high resolution) from Camera](https://github.com/javafa/thisiskotlin/tree/master/CameraUseOriginal)   
-[Navigation Drawer](https://github.com/javafa/thisiskotlin/tree/master/Drawer)   
+[Navigation Drawer](https://github.com/javafa/thisiskotlin/tree/master/NavigationDrawer)   
 [SwipeRefreshLayout](https://github.com/javafa/thisiskotlin/tree/master/SwipeRefresh)   

@@ -1,33 +1,35 @@
 package com.example.networkretrofit
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import kotlinx.android.synthetic.main.item_recycler.view.*
+
+import com.example.networkretrofit.databinding.ItemRecyclerBinding
 
 class CustomAdapter:RecyclerView.Adapter<Holder>() {
-    var userList = mutableListOf<Repository>()
+    var userList : Repository? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_recycler, parent, false)
-        return Holder(view)
+        val binding = ItemRecyclerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return Holder(binding)
     }
 
     override fun getItemCount(): Int {
-        return userList.size
+        return userList?.size ?: 0
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
-        val user = userList.get(position)
+        val user = userList?.get(position)
         holder.setUser(user)
     }
 }
-
-class Holder(itemView: View) : RecyclerView.ViewHolder(itemView){
-    fun setUser(user:Repository) {
-        itemView.textName.text = user.name
-        itemView.textId.text = user.node_id
-        Glide.with(itemView).load(user.owner.avatar_url).into(itemView.imageAvatar)
+class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.root){
+    fun setUser(user:RepositoryItem?) {
+        user?.let {
+            binding.textName.text = it.name
+            binding.textId.text = it.node_id
+            Glide.with(binding.imageAvatar).load(it.owner.avatar_url).into(binding.imageAvatar)
+        }
     }
 }

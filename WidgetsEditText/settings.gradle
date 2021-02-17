@@ -1,2 +1,2 @@
-rootProject.name='WidgetsTextView'
+rootProject.name = "WidgetsEditText"
 include ':app'

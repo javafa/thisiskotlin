@@ -1,17 +1,16 @@
 package net.flow9.viewpager2_view
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.item_viewpager.view.*
+import net.flow9.viewpager2_view.databinding.ItemViewpagerBinding
 
 class CustomPagerAdapter : RecyclerView.Adapter<Holder>(){
     var textList = listOf<String>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_viewpager, parent, false)
-        return Holder(view)
+        val binding = ItemViewpagerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return Holder(binding)
     }
 
     override fun getItemCount(): Int {
@@ -24,9 +23,9 @@ class CustomPagerAdapter : RecyclerView.Adapter<Holder>(){
     }
 }
 
-class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class Holder(val binding: ItemViewpagerBinding) : RecyclerView.ViewHolder(binding.root) {
     fun setText(text:String) {
-        itemView.textView.text = text
+        binding.textView.text = text
     }
 }
 

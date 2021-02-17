@@ -1,30 +1,39 @@
 package com.example.contentresolver
 
 import android.Manifest
-import android.content.pm.PackageManager
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Toast
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.activity_main.*
+import com.example.contentresolver.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
+
+    val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        checkPermission()
+        setContentView(binding.root)
+        requirePermissions(arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 999)
+    }
+
+    override fun permissionGranted(requestCode: Int) {
+        startProcess()
+    }
+
+    override fun permissionDenied(requestCode: Int) {
+        Toast.makeText(this
+            , "외부저장소 권한 승인이 필요합니다. 앱을 종료합니다."
+            , Toast.LENGTH_LONG)
+            .show()
+        finish()
     }
 
     fun startProcess() {
-        setContentView(R.layout.activity_main)
-
         val adapter = MusicRecyclerAdapter()
         adapter.musicList.addAll(getMusicList())
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        binding.recyclerView.adapter = adapter
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
     }
 
     fun getMusicList() : List<Music> {
@@ -52,44 +61,5 @@ class MainActivity : AppCompatActivity() {
             musicList.add(music)
         }
         return musicList
-    }
-
-    /*
-    * 여기서 부터 권한처리 관련 함수
-    */
-    val permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
-
-    fun checkPermission() {
-        if(ContextCompat.checkSelfPermission(this, permissions[0]) != PackageManager.PERMISSION_GRANTED){
-            requestPermission()
-        }else{
-            startProcess()
-        }
-    }
-
-    fun requestPermission() {
-        ActivityCompat.requestPermissions( this, permissions, 99)
-    }
-
-    override fun onRequestPermissionsResult(requestCode: Int
-                                            , permissions: Array<out String>
-                                            , grantResults: IntArray) {
-        if(requestCode == 99){
-            var check = true
-            for(grant in grantResults) {
-                if(grant != PackageManager.PERMISSION_GRANTED){
-                    check = false
-                    break
-                }
-            }
-            if(!check){
-                Toast.makeText(this
-                    , "권한요청을 모두 승인해야지만 앱을 실행할 수 있습니다."
-                    , Toast.LENGTH_LONG).show()
-                finish()
-            }else{
-                startProcess()
-            }
-        }
     }
 }

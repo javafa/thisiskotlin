@@ -5,16 +5,18 @@ import android.graphics.*
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import kotlinx.android.synthetic.main.activity_main.*
+import com.example.customview.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    val binding by lazy {ActivityMainBinding.inflate(layoutInflater)}
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
 
         val customView = CustomView("안녕 코틀린!",this)
-        frameLayout.addView(customView)
+        binding.frameLayout.addView(customView)
     }
 }
 

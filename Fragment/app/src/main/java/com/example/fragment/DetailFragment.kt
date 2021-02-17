@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.fragment_detail.view.*
+import com.example.fragment.databinding.FragmentDetailBinding
 
 class DetailFragment : Fragment() {
     var mainActivity:MainActivity? = null
@@ -20,8 +20,8 @@ class DetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view=inflater!!.inflate(R.layout.fragment_detail,container,false)
-        view.btnBack.setOnClickListener { mainActivity?.goBack() }
-        return view
+        val binding = FragmentDetailBinding.inflate(inflater,container,false)
+        binding.btnBack.setOnClickListener { mainActivity?.goBack() }
+        return binding.root
     }
 }

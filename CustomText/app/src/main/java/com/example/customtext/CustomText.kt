@@ -5,7 +5,7 @@ import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatTextView
 
 class CustomText : AppCompatTextView {
-    constructor(context: Context?)
+    constructor(context: Context)
             : super(context) {
     }
     constructor(context: Context, attrs: AttributeSet)

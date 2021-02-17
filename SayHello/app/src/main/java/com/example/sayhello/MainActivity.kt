@@ -2,15 +2,18 @@ package com.example.sayhello
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_main.*
+import com.example.sayhello.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    val binding by lazy {ActivityMainBinding.inflate(layoutInflater)}
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        btnSay.setOnClickListener{
-            textSay.setText("Hello Kotlin!!!")
+        setContentView(binding.root)
+        
+        binding.btnSay.setOnClickListener{
+            binding.textSay.setText("Hello Kotlin!!!")
         }
     }
 }

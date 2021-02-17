@@ -5,26 +5,28 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.item_recycler.view.*
+import net.flow9.swiperefresh.databinding.ActivityMainBinding
+import net.flow9.swiperefresh.databinding.ItemRecyclerBinding
 
 class MainActivity : AppCompatActivity() {
+
+    val binding by lazy {ActivityMainBinding.inflate(layoutInflater)}
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
 
         val adapter = CustomAdapter()
         adapter.items.addAll(getMoreItems())
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        binding.recyclerView.adapter = adapter
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
 
-        swipe.setOnRefreshListener {
+        binding.swipe.setOnRefreshListener {
             adapter.items.addAll(0, getMoreItems())
             adapter.notifyDataSetChanged()
-            swipe.isRefreshing = false
+            binding.swipe.isRefreshing = false
         }
     }
 
@@ -45,17 +47,18 @@ class MainActivity : AppCompatActivity() {
 class CustomAdapter : RecyclerView.Adapter<CustomAdapter.Holder>() {
     val items = mutableListOf<String>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        return Holder(LayoutInflater.from(parent.context).inflate(R.layout.item_recycler, parent, false))
+        val binding = ItemRecyclerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return Holder(binding)
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
-        holder.itemView.textView.text = items[position]
+        holder.binding.textView.text = items[position]
     }
 
     override fun getItemCount(): Int {
         return items.size
     }
 
-    class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {}
+    class Holder(val binding: ItemRecyclerBinding) : RecyclerView.ViewHolder(binding.root) {}
 }
 

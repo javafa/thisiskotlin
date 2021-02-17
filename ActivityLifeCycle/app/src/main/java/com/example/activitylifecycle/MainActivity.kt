@@ -8,9 +8,11 @@ import android.support.v4.media.session.MediaControllerCompat
 import android.support.v4.media.session.MediaSessionCompat
 import android.support.v4.media.session.PlaybackStateCompat
 import android.widget.MediaController
-import kotlinx.android.synthetic.main.activity_main.*
+import com.example.activitylifecycle.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    val binding by lazy { ActivityMainBinding.inflate(layoutInflater)}
 
     val LOG_TAG = "MainActivity"
     private lateinit var mediaSession: MediaSessionCompat
@@ -23,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
 
 //        val mediaController = MediaController(this)
 
@@ -49,19 +51,19 @@ class MainActivity : AppCompatActivity() {
         MediaControllerCompat(this, mediaSession).also { mediaController ->
             MediaControllerCompat.setMediaController(this, mediaController)
 
-            buttonPlay.setOnClickListener {
+            binding.buttonPlay.setOnClickListener {
                 val videoUri = Uri.parse("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
 
-                videoView.setVideoURI(videoUri)
-                videoView.requestFocus()
-                videoView.start()
+                binding.videoView.setVideoURI(videoUri)
+                binding.videoView.requestFocus()
+                binding.videoView.start()
             }
         }
     }
 
     override fun onResume() {
         super.onResume()
-        textView.text = "액티비티가 실행중입니다."
+        binding.textView.text = "액티비티가 실행중입니다."
     }
 }
 

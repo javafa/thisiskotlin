@@ -3,27 +3,30 @@ package com.example.timer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.os.Message
-import kotlinx.android.synthetic.main.activity_main.*
+import com.example.timer.databinding.ActivityMainBinding
 import kotlin.concurrent.thread
 
 class MainActivity : AppCompatActivity() {
 
+    val binding by lazy {ActivityMainBinding.inflate(layoutInflater)}
+
     var total = 0
     var started = false
-    val handler = object: Handler() {
+    val handler = object: Handler(Looper.getMainLooper()) {
         override fun handleMessage(msg: Message) {
             val minute = String.format("%02d", total/60)
             val second = String.format("%02d", total%60)
-            textTimer.text = "$minute:$second"
+            binding.textTimer.text = "$minute:$second"
         }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
 
-        buttonStart.setOnClickListener {
+        binding.buttonStart.setOnClickListener {
             started = true
             thread(start=true) {
                 while (started) {
@@ -35,11 +38,11 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-        buttonStop.setOnClickListener {
+        binding.buttonStop.setOnClickListener {
             if (started) {
                 started = false
                 total = 0
-                textTimer.text = "00:00"
+                binding.textTimer.text = "00:00"
             }
         }
     }

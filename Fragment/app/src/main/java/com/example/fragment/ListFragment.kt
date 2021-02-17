@@ -6,18 +6,29 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.fragment_list.view.*
+import com.example.fragment.databinding.FragmentListBinding
 
 class ListFragment : Fragment() {
     var mainActivity:MainActivity? = null
+
+    lateinit var binding:FragmentListBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater!!.inflate(R.layout.fragment_list, container, false)
-        view.btnNext.setOnClickListener { mainActivity?.goDetail() }
-        return view
+        binding = FragmentListBinding.inflate(inflater, container, false)
+
+        binding.btnNext.setOnClickListener { mainActivity?.goDetail() }
+
+        binding.textTitle.text = arguments?.getString("key1")
+        binding.textValue.text = "${arguments?.getInt("key2")}"
+
+        return binding.root
+    }
+
+    fun setValue(value:String) {
+        binding.textFromActivity.text = value
     }
 
     override fun onAttach(context: Context?) {

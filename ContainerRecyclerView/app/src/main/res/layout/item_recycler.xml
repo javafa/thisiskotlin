@@ -12,7 +12,7 @@
         android:layout_weight="1"
         android:gravity="center"
         android:text="01"
-        android:textSize="24sp" />
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/textTitle"
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="5"
         android:text="Title"
-        android:textSize="24sp" />
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/textDate"
@@ -28,5 +28,5 @@
         android:layout_height="wrap_content"
         android:layout_weight="3"
         android:text="2020-01-01"
-        android:textSize="24sp" />
+        android:textSize="18sp" />
 </LinearLayout>

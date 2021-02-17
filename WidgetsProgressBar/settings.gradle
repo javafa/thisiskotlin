@@ -1,2 +1,2 @@
+rootProject.name = "WidgetsProgressBar"
 include ':app'
-rootProject.name='Widgets ProgressBar'

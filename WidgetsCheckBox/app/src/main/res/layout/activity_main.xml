@@ -7,7 +7,6 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -18,23 +17,20 @@
 
         <CheckBox
             android:id="@+id/checkApple"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="사과" />
 
         <CheckBox
             android:id="@+id/checkBanana"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="바나나" />
 
         <CheckBox
             android:id="@+id/checkOrange"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="오렌지" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

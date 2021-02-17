@@ -1,7 +1,6 @@
 package com.example.fileio
 
 import android.Manifest
-import android.annotation.TargetApi
 import android.content.pm.PackageManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -11,10 +10,11 @@ import android.util.Log
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import kotlinx.android.synthetic.main.activity_main.*
-import java.io.File
+import com.example.fileio.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    val binding by lazy {ActivityMainBinding.inflate(layoutInflater)}
 
     val permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE
         , Manifest.permission.WRITE_EXTERNAL_STORAGE)
@@ -34,26 +34,26 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun startProcess() {
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
 
         val dirPath = filesDir.absolutePath
         val fileName = "NewFile.txt"
         val fileUtil = FileUtil()
 
-        btnWrite.setOnClickListener {
-            val content = editText.text.toString().trim()
+        binding.btnWrite.setOnClickListener {
+            val content = binding.editText.text.toString().trim()
             if(content.length > 0) {
                 Log.d("FileUtil", "dirPath=$dirPath")
                 fileUtil.writeTextFile(dirPath, fileName, content)
-                editText.setText("")
+                binding.editText.setText("")
             }
         }
 
-        btnRead.setOnClickListener {
+        binding.btnRead.setOnClickListener {
             val fullPath = "$dirPath/$fileName"
             Log.d("FileUtil", "fullPath=$fullPath")
             val content = fileUtil.readTextFile(fullPath)
-            editText.setText(content)
+            binding.editText.setText(content)
         }
     }
 

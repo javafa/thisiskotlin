@@ -1,20 +1,18 @@
 package com.example.containerrecyclerview
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.item_recycler.view.*
+import com.example.containerrecyclerview.databinding.ItemRecyclerBinding
 import java.text.SimpleDateFormat
 
 class CustomAdapter : RecyclerView.Adapter<Holder>() {
     var listData = mutableListOf<Memo>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_recycler, parent, false)
-        return Holder(view)
+        val binding = ItemRecyclerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return Holder(binding)
     }
 
     override fun getItemCount(): Int {
@@ -27,22 +25,23 @@ class CustomAdapter : RecyclerView.Adapter<Holder>() {
     }
 }
 
-class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class Holder(val binding: ItemRecyclerBinding) : RecyclerView.ViewHolder(binding.root) {
+
     init {
-        itemView.setOnClickListener {
-            Toast.makeText(itemView?.context
-                ,"클릭된 아이템=${itemView.textTitle.text}"
+        binding.root.setOnClickListener {
+            Toast.makeText(binding.root.context
+                ,"클릭된 아이템=${binding.textTitle.text}"
                 , Toast.LENGTH_LONG).show()
         }
     }
 
     fun setMemo(memo:Memo) {
-        itemView.textNo.text = "${memo.no}"
-        itemView.textTitle.text = memo.title
+        binding.textNo.text = "${memo.no}"
+        binding.textTitle.text = memo.title
 
         var sdf = SimpleDateFormat("yyyy/MM/dd")
         var formattedDate = sdf.format(memo.timestamp)
-        itemView.textDate.text = formattedDate
+        binding.textDate.text = formattedDate
     }
 }
 

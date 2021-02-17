@@ -1,2 +1,2 @@
-rootProject.name='WidgetsCheckBox'
+rootProject.name = "WidgetsCheckBox"
 include ':app'

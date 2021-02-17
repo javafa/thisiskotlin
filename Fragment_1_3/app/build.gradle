@@ -1,11 +1,10 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "30.0.2"
-
     defaultConfig {
         applicationId "net.flow9.fragment_1_3"
         minSdkVersion 19
@@ -26,10 +25,11 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
-    // For Kotlin projects
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
     }
 }
 
