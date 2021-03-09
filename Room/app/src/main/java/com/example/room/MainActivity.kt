@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.room.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -17,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         helper = Room.databaseBuilder(this, RoomHelper::class.java, "room_memo")
+                .addMigrations(MigrateDatabase.MIGRATE_1_2)
             .allowMainThreadQueries()
             .build()
 
@@ -37,6 +40,16 @@ class MainActivity : AppCompatActivity() {
                 adapter.notifyDataSetChanged()
                 binding.editMemo.setText("")
             }
+        }
+    }
+}
+
+//룸 변경사항 적용하기
+object MigrateDatabase {
+    val MIGRATE_1_2 = object : Migration(1, 2) {
+        override fun migrate(database: SupportSQLiteDatabase) {
+            val alter = "ALTER table room_memo add column new_title text"
+            database.execSQL(alter)
         }
     }
 }
