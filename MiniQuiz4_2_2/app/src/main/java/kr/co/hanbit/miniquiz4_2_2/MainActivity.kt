@@ -30,12 +30,19 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun printCheckedItems(){
+    fun printCheckedItems() {
         var result = ""
-        if(apple) result = " 사과"
-        if(banana) result += " 바나나"
-        if(orange) result += " 오렌지"
+        if (apple) result = " 사과"
 
+        if (banana) {
+            if (result.isNotEmpty()) result += "와"
+            result += " 바나나"
+        }
+        if (orange) {
+            if (result.isNotEmpty()) result += "와"
+            result += " 오렌지"
+        }
         binding.textView.text = "${result}가 선택되었습니다."
     }
+
 }
