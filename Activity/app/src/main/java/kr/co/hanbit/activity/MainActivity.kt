@@ -13,14 +13,14 @@ class MainActivity : AppCompatActivity() {
 
     val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
-    lateinit var activityResult: ActivityResultLauncher<Intent>
+    lateinit var resultListener: ActivityResultLauncher<Intent>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
         // onActivityResult의 대안
-        activityResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+        resultListener = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             if (it.resultCode == Activity.RESULT_OK) {
                 val message = it.data?.getStringExtra("returnValue")
                 Toast.makeText(this, message, Toast.LENGTH_LONG).show()
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
         // startActivityForResult 의 대안
         binding.btnStart.setOnClickListener {
-            activityResult.launch(intent)
+            resultListener.launch(intent)
         }
     }
 }
