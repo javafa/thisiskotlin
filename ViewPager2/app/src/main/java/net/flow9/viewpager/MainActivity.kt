@@ -13,6 +13,8 @@ class MainActivity : FragmentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        val strings = listOf("A","B")
+
         val fragmentList = listOf(FragmentA(), FragmentB(), FragmentC(), FragmentD())
         val adapter = FragmentAdapter(this)
         adapter.fragmentList = fragmentList
