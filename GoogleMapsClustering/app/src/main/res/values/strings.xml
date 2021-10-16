@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">GoogleMapsClustering</string>
+    <string name="title_activity_maps">MapsActivity</string>
+</resources>

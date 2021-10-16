@@ -2,6 +2,7 @@ package com.example.customtext
 
 import android.content.Context
 import android.util.AttributeSet
+import android.util.Log
 import androidx.appcompat.widget.AppCompatTextView
 
 class CustomText : AppCompatTextView {
@@ -12,8 +13,10 @@ class CustomText : AppCompatTextView {
             : super(context, attrs){
 
         val typed = context.obtainStyledAttributes(attrs, R.styleable.CustomText)
+        Log.d(javaClass.simpleName, "typed=${typed.positionDescription}")
 
         val size = typed.indexCount
+        Log.d(javaClass.simpleName, "size=$size")
 
         for (i in 0 until size) {
             when (typed.getIndex(i)) {
