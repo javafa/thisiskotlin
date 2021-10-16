@@ -4,6 +4,7 @@
 안드로이드 스튜디오 4.1.x , 4.2 Beta 반영   
 
 - [초판가기 (1st Edition)](https://github.com/javafa/thisiskotlin/tree/master/1st_edition)   
+- [2판가기 (2nd Edition)](https://github.com/javafa/thisiskotlin/tree/master/2nd_edition)   
 
 ## Project List
    
