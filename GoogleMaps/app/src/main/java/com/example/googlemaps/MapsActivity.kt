@@ -7,6 +7,9 @@ import android.os.Bundle
 import android.os.Looper
 import android.util.Log
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -18,7 +21,9 @@ import com.example.googlemaps.databinding.ActivityMapsBinding
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.model.CameraPosition
 
-class MapsActivity : BaseActivity(), OnMapReadyCallback {
+class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
+
+    lateinit var locationPermission: ActivityResultLauncher<Array<String>>
 
     private lateinit var mMap: GoogleMap
     val binding by lazy { ActivityMapsBinding.inflate(layoutInflater) }
@@ -30,22 +35,22 @@ class MapsActivity : BaseActivity(), OnMapReadyCallback {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        val permissions = arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION,
-            Manifest.permission.ACCESS_FINE_LOCATION)
+        locationPermission = registerForActivityResult(
+                            ActivityResultContracts.RequestMultiplePermissions()) { results ->
+            if(results.all{ it.value }) {
+                startProcess()
+            } else {
+                Toast.makeText(this
+                    , "권한 승인이 필요합니다."
+                    , Toast.LENGTH_LONG).show()
+            }
+        }
 
-        requirePermissions(permissions, 999)
-    }
-
-    override fun permissionGranted(requestCode: Int) {
-        startProcess()
-    }
-
-    override fun permissionDenied(requestCode: Int) {
-        Toast.makeText(this
-            , "권한 승인이 필요합니다."
-            , Toast.LENGTH_LONG)
-            .show()
-
+        locationPermission.launch(
+            arrayOf(
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission.ACCESS_FINE_LOCATION)
+        )
     }
 
     fun startProcess() {

@@ -61,7 +61,6 @@
    
 ### 6장   
 [Permission](https://github.com/javafa/thisiskotlin/tree/master/Permission)   
-[BaseActivity](https://github.com/javafa/thisiskotlin/tree/master/Base)   
    
 ### 7장   
 [File IO(Input Output)](https://github.com/javafa/thisiskotlin/tree/master/FileIO)   
@@ -91,9 +90,9 @@
 [NetworkHttpUrlConnection](https://github.com/javafa/thisiskotlin/tree/master/NetworkHttpUrlConnection)   
 [NetworkRetrofit](https://github.com/javafa/thisiskotlin/tree/master/NetworkRetrofit)   
 [SeoulPublicLibraries](https://github.com/javafa/thisiskotlin/tree/master/SeoulPublicLibraries)   
+[Google Maps Clustering](https://github.com/javafa/thisiskotlin/tree/master/GoogleMapsClustering)   
 
 ### 기타 - 책에 없는 것들   
 [Navigation Drawer](https://github.com/javafa/thisiskotlin/tree/master/NavigationDrawer)   
 [SwipeRefreshLayout](https://github.com/javafa/thisiskotlin/tree/master/SwipeRefresh)   
-[Retrofit : 회원가입, 로그인처리](https://github.com/javafa/thisiskotlin/tree/master/Retrofit_Login)   
-[Google Maps Clustering](https://github.com/javafa/thisiskotlin/tree/master/GoogleMapsClustering)   
+[Retrofit : 회원가입, 로그인처리](https://github.com/javafa/thisiskotlin/tree/master/Retrofit_Login)     

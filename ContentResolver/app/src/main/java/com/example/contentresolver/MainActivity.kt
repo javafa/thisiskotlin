@@ -1,32 +1,32 @@
 package com.example.contentresolver
 
-import android.Manifest
 import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.contentresolver.databinding.ActivityMainBinding
 
-class MainActivity : BaseActivity() {
+class MainActivity : AppCompatActivity() {
+
+    lateinit var storagePermission: ActivityResultLauncher<String>
 
     val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        requirePermissions(arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 999)
-    }
 
-    override fun permissionGranted(requestCode: Int) {
-        startProcess()
-    }
-
-    override fun permissionDenied(requestCode: Int) {
-        Toast.makeText(this
-            , "외부저장소 권한 승인이 필요합니다. 앱을 종료합니다."
-            , Toast.LENGTH_LONG)
-            .show()
-        finish()
+        storagePermission = registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
+            if(isGranted) {
+                startProcess()
+            } else {
+                Toast.makeText(baseContext, "외부저장소 권한을 승인해야 앱을 사용할 수 있습니다.", Toast.LENGTH_LONG).show()
+                finish()
+            }
+        }
     }
 
     fun startProcess() {

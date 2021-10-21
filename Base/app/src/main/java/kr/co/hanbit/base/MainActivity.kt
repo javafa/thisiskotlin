@@ -6,38 +6,39 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import kr.co.hanbit.base.databinding.ActivityMainBinding
 
 class MainActivity : BaseActivity() {
 
     val binding by lazy {ActivityMainBinding.inflate(layoutInflater)}
 
+    lateinit var activityResult: ActivityResultLauncher<Intent>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.btnCamera.setOnClickListener {
-            requirePermissions(arrayOf(Manifest.permission.CAMERA), 999)
-        }
-    }
-
-    override fun permissionGranted(requestCode: Int) {
-        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        startActivityForResult(intent, 10)
-    }
-
-    override fun permissionDenied(requestCode: Int) {
-        Toast.makeText(baseContext, "권한 거부됨", Toast.LENGTH_LONG).show()
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if(requestCode == 10) {
-            if(resultCode == RESULT_OK) {
+        activityResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            if(it.resultCode == RESULT_OK) {
                 Log.d("카메라","촬영 성공")
             } else {
                 Log.d("카메라","촬영 실패")
             }
         }
+
+        binding.btnCamera.setOnClickListener {
+            requestPermissions(arrayOf(Manifest.permission.CAMERA))
+        }
+    }
+
+    override fun permissionGranted() {
+        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        activityResult.launch(intent)
+    }
+
+    override fun permissionDenied() {
+        Toast.makeText(baseContext, "권한 거부됨", Toast.LENGTH_LONG).show()
     }
 }

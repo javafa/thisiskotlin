@@ -1,37 +1,22 @@
 package kr.co.hanbit.base
 
-import android.content.pm.PackageManager
-import android.os.Build
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
 
 abstract class BaseActivity : AppCompatActivity() {
 
-    abstract fun permissionGranted(requestCode: Int)
-    abstract fun permissionDenied(requestCode: Int)
+    abstract fun permissionGranted()
+    abstract fun permissionDenied()
 
-    fun requirePermissions(permissions: Array<String>, requestCode: Int) {
-        if(Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            permissionGranted(requestCode)
-        } else {
-            val isAllPermissionsGranted = permissions.all { checkSelfPermission(it) == PackageManager.PERMISSION_GRANTED }
-            if (isAllPermissionsGranted) {
-                permissionGranted(requestCode)
-            } else {
-                ActivityCompat.requestPermissions(this, permissions, requestCode)
-            }
-        }
+    fun requestPermissions(permissions:Array<String>) {
+        requestPermissionLauncher.launch(permissions)
     }
 
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
-    ) {
-        if (grantResults.all { it == PackageManager.PERMISSION_GRANTED }) {
-            permissionGranted(requestCode)
+    private val requestPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { results ->
+        if( results.all{ it.value }) {
+            permissionGranted()
         } else {
-            permissionDenied(requestCode)
+            permissionDenied()
         }
     }
 }
