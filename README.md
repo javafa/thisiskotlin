@@ -49,7 +49,6 @@
    
 ### 5장   
 [Activity](https://github.com/javafa/thisiskotlin/tree/master/Activity)   
-[5장 1.5 액티비티 생명 주기 예제](https://github.com/javafa/thisiskotlin/tree/master/ActivityLifeCycle)   
 [ContainerSpinner](https://github.com/javafa/thisiskotlin/tree/master/ContainerSpinner)   
 [ContainerRecyclerView](https://github.com/javafa/thisiskotlin/tree/master/ContainerRecyclerView)   
 [Fragment](https://github.com/javafa/thisiskotlin/tree/master/Fragment)   
@@ -96,3 +95,4 @@
 [Navigation Drawer](https://github.com/javafa/thisiskotlin/tree/master/NavigationDrawer)   
 [SwipeRefreshLayout](https://github.com/javafa/thisiskotlin/tree/master/SwipeRefresh)   
 [Retrofit : 회원가입, 로그인처리](https://github.com/javafa/thisiskotlin/tree/master/Retrofit_Login)     
+[Video Player](https://github.com/javafa/thisiskotlin/tree/master/VideoPlayer)   

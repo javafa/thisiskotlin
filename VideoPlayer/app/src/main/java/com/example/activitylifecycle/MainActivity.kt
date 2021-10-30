@@ -1,16 +1,15 @@
 package com.example.activitylifecycle
 
-
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.activitylifecycle.databinding.ActivityMainBinding
-import android.util.Log
-
 
 class MainActivity : AppCompatActivity() {
 
     val binding by lazy { ActivityMainBinding.inflate(layoutInflater)}
+
+    var playing = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,15 +22,26 @@ class MainActivity : AppCompatActivity() {
             }
 
             videoView.setOnPreparedListener { mediaPlayer ->
-                Log.d(javaClass.simpleName, "video started ===>")
+                playing = true
                 videoView.start()
             }
         }
     }
 
+    override fun onPause() {
+        if(playing) {
+            binding.textView.text = "동영상 멈춤."
+            binding.videoView.pause()
+        }
+        super.onPause()
+    }
+
     override fun onResume() {
         super.onResume()
-        binding.textView.text = "액티비티가 실행중입니다."
+        if(playing) {
+            binding.videoView.resume()
+            binding.textView.text = "동영상이 실행중입니다."
+        }
     }
 }
 
