@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         var eraOfDegrom = 2.43
         val era = if (eraOfRyu < eraOfDegrom) {
             Log.d("MLB_Result", "2019 류현진이 디그롬을 이겼습니다.")
-            eraOfRyu // 마지막 값인 goldenState에 입력되어 있는 4가 win에 대입됩니다.
+            eraOfRyu
         } else {
             Log.d("MLB_Result", "2019 디그롬이 류현진을 이겼습니다.")
             eraOfDegrom

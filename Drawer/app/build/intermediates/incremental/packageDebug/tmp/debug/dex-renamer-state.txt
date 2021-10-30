@@ -1,4 +1,0 @@
-#Wed Sep 23 21:21:57 KST 2020
-base.0=/Users/donho/AndroidStudioProjects/Drawer/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
