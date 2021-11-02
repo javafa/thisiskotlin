@@ -2,7 +2,9 @@ package com.example.googlemaps
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.graphics.drawable.BitmapDrawable
 import android.location.Location
+import android.os.Build
 import android.os.Bundle
 import android.os.Looper
 import android.util.Log
@@ -19,6 +21,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.example.googlemaps.databinding.ActivityMapsBinding
 import com.google.android.gms.location.*
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.CameraPosition
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
@@ -89,9 +92,22 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     fun setLastLocation(lastLocation: Location) {
         val LATLNG = LatLng(lastLocation.latitude, lastLocation.longitude)
+
+        // 커스텀 마커 사용하기
+        var bitmapDrawable: BitmapDrawable
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            bitmapDrawable = getDrawable(R.drawable.marker) as BitmapDrawable
+        } else {
+            bitmapDrawable = resources.getDrawable(R.drawable.marker) as BitmapDrawable
+        }
+
+        var discriptor = BitmapDescriptorFactory.fromBitmap(bitmapDrawable.bitmap)
+
         val markerOptions = MarkerOptions()
             .position(LATLNG)
             .title("Here!")
+            .icon(discriptor) // 커스텀 마커 적용
 
         val cameraPosition = CameraPosition.Builder()
             .target(LATLNG)
