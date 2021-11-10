@@ -86,6 +86,7 @@
    
 ### 12장	
 [GoogleMaps](https://github.com/javafa/thisiskotlin/tree/master/GoogleMaps)   
+[MyLocation](https://github.com/javafa/thisiskotlin/tree/master/MapsMyLocation)   
 [NetworkHttpUrlConnection](https://github.com/javafa/thisiskotlin/tree/master/NetworkHttpUrlConnection)   
 [NetworkRetrofit](https://github.com/javafa/thisiskotlin/tree/master/NetworkRetrofit)   
 [SeoulPublicLibraries](https://github.com/javafa/thisiskotlin/tree/master/SeoulPublicLibraries)   
