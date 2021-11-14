@@ -34,7 +34,7 @@
 [Lateinit, Lazy](https://github.com/javafa/thisiskotlin/tree/master/Lateinit)   
 [Scope Function](https://github.com/javafa/thisiskotlin/tree/master/ScopeFunction)   
    
-### 4장   
+### 4장 Layout and Widget   
 [ConstraintChain](https://github.com/javafa/thisiskotlin/tree/master/ConstraintChain)   
 [LinearLayout](https://github.com/javafa/thisiskotlin/tree/master/LinearLayout)   
 [ScrollView](https://github.com/javafa/thisiskotlin/tree/master/ScrollView)   
@@ -47,7 +47,7 @@
 [WidgetsSeekBar](https://github.com/javafa/thisiskotlin/tree/master/WidgetsSeekBar)   
 [WidgetsRatingBar](https://github.com/javafa/thisiskotlin/tree/master/WidgetsRatingBar)   
    
-### 5장   
+### 5장 Activity, Fragment and View     
 [Activity](https://github.com/javafa/thisiskotlin/tree/master/Activity)   
 [ContainerSpinner](https://github.com/javafa/thisiskotlin/tree/master/ContainerSpinner)   
 [ContainerRecyclerView](https://github.com/javafa/thisiskotlin/tree/master/ContainerRecyclerView)   
@@ -58,33 +58,33 @@
 [ViewPager2](https://github.com/javafa/thisiskotlin/tree/master/ViewPager2)   
 [ViewPager2 View](https://github.com/javafa/thisiskotlin/tree/master/ViewPager2_View)   
    
-### 6장   
+### 6장 Permission   
 [Permission](https://github.com/javafa/thisiskotlin/tree/master/Permission)   
    
-### 7장   
+### 7장 File IO   
 [File IO(Input Output)](https://github.com/javafa/thisiskotlin/tree/master/FileIO)   
 [SharedPreferences](https://github.com/javafa/thisiskotlin/tree/master/SharedPreferences)   
    
-### 8장   
+### 8장 Database   
 [SQLite](https://github.com/javafa/thisiskotlin/tree/master/SQLite)   
 [Room](https://github.com/javafa/thisiskotlin/tree/master/Room)   
    
-### 9장   
+### 9장 Camera   
 [Camera and Gallery](https://github.com/javafa/thisiskotlin/tree/master/CameraAndGallery)   
    
-### 10장	
+### 10장 Background and Coroutine   
 [10장 1.2 백그라운드 스레드 예제](https://github.com/javafa/thisiskotlin/tree/master/Thread)   
 [10장 1.3 메인 스레드와 백그라운드 스레드 예제](https://github.com/javafa/thisiskotlin/tree/master/ThreadWithUI)   
 [Timer](https://github.com/javafa/thisiskotlin/tree/master/Timer)   
 [Coroutine](https://github.com/javafa/thisiskotlin/tree/master/Coroutine)   
 [Coroutine Tutorials](https://github.com/javafa/thisiskotlin/tree/master/CoroutineTutorials)   
    
-### 11장	
+### 11장 Service and Content Resolver   
 [ServiceTest](https://github.com/javafa/thisiskotlin/tree/master/ServiceTest)   
 [Foreground Service](https://github.com/javafa/thisiskotlin/tree/master/ForegroundService)   
 [11장 2 콘텐트 리졸버 예제](https://github.com/javafa/thisiskotlin/tree/master/ContentResolver)   
    
-### 12장	
+### 12장 Network and GoogleMap   
 [GoogleMaps](https://github.com/javafa/thisiskotlin/tree/master/GoogleMaps)   
 [MyLocation](https://github.com/javafa/thisiskotlin/tree/master/MapsMyLocation)   
 [NetworkHttpUrlConnection](https://github.com/javafa/thisiskotlin/tree/master/NetworkHttpUrlConnection)   
@@ -92,9 +92,11 @@
 [SeoulPublicLibraries](https://github.com/javafa/thisiskotlin/tree/master/SeoulPublicLibraries)   
 [Google Maps Clustering](https://github.com/javafa/thisiskotlin/tree/master/GoogleMapsClustering)   
 
-### 13장	
-[Firebase](https://github.com/javafa/thisiskotlin/tree/master/Firebase)   
-[Firebase Chatting](https://github.com/javafa/thisiskotlin/tree/master/FirebaseChat)   
+### 13장 Firebase   
+[Realtime Database](https://github.com/javafa/thisiskotlin/tree/master/Firebase)   
+[Chatting](https://github.com/javafa/thisiskotlin/tree/master/FirebaseChat)   
+[Storage](https://github.com/javafa/thisiskotlin/tree/master/FirebaseStorage)   
+[Cloud Messaging](https://github.com/javafa/thisiskotlin/tree/master/FirebaseFCM)   
 
 ### 기타 - 책에 없는 것들   
 [Navigation Drawer](https://github.com/javafa/thisiskotlin/tree/master/NavigationDrawer)   
