@@ -1,10 +1,17 @@
 # 이것이 안드로이드다 with 코틀린 - 3판 (3rd Edition)    
    
-안드로이드 11(R), 12 반영   
-안드로이드 스튜디오 Arctic Fox 반영 - 2021년 10월 21일   
+Android 11(R), 12  
+Android Studio - Arctic Fox   
 
-- [초판가기 (1st Edition)](https://github.com/javafa/thisiskotlin/tree/master/1st_edition)   
-- [2판가기 (2nd Edition)](https://github.com/javafa/thisiskotlin/tree/master/2nd_edition)   
+- 3rd Edition (DEC 2021)   
+  ActivityResultLauncher   
+  Firebase   
+
+- [2nd Edition (Apr 2021)](https://github.com/javafa/thisiskotlin/tree/master/2nd_edition)   
+  ViewBinding   
+
+- [1st Edition (Apr 2020)](https://github.com/javafa/thisiskotlin/tree/master/1st_edition)    
+  Published
 
 ## Project List
    
