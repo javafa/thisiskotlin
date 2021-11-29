@@ -4,11 +4,15 @@ Android 11(R), 12
 Android Studio - Arctic Fox   
 
 - 3rd Edition (DEC 2021)   
-  ActivityResultLauncher   
-  Firebase   
+  Added ActivityResultLauncher   
+  Added Firebase   
+  (X) Removed ActivityResult
 
 - [2nd Edition (Apr 2021)](https://github.com/javafa/thisiskotlin/tree/master/2nd_edition)   
-  ViewBinding   
+  Added ViewBinding   
+  Added Coroutine
+  (X) Removed Kotlin Extension   
+  (X) Removed Thread   
 
 - [1st Edition (Apr 2020)](https://github.com/javafa/thisiskotlin/tree/master/1st_edition)    
   Published

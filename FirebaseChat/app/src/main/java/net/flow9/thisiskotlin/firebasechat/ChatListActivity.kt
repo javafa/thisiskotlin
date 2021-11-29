@@ -22,6 +22,7 @@ import net.flow9.thisiskotlin.firebasechat.model.Room
 class ChatListActivity : AppCompatActivity() {
     val binding by lazy { ActivityChatListBinding.inflate(layoutInflater)}
     val database = Firebase.database("https://this-is-android-with-kot-df246-default-rtdb.asia-southeast1.firebasedatabase.app")
+
     val roomsRef  = database.getReference("rooms")
 
     // 로그인한 사용자 정보를 다른 액티비티에서 사용할 수 있도록 companion object 로 생성
