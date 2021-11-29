@@ -10,7 +10,7 @@ Android Studio - Arctic Fox
 
 - [2nd Edition (Apr 2021)](https://github.com/javafa/thisiskotlin/tree/master/2nd_edition)   
   Added ViewBinding   
-  Added Coroutine
+  Added Coroutine   
   (X) Removed Kotlin Extension   
   (X) Removed Thread   
 
