@@ -25,18 +25,22 @@ Android Studio - Arctic Fox
 * 년도 뒤에 3.1은 월, 일 이 아니라 Major, Minor 또는 Patch 버전을 의미합니다.   
 
 ### 2021.2.1 Chipmunk   
-확인중...   
-
+Gradle에서 가상 디바이스의 설정 및 관리를 할 수 있습니다.   
+CPU와 메모리가 최적화된 ATD(Automated Test Devices)라는 새로운 에뮬레이터를 사용할 수 있습니다.   
+테스트 샤딩으로 전체 테스트 시간을 단축할 수 있습니다.   
+   
 ### 2021.1.1 Bumblebee   
-Compose 개선 - 에디터 화면에서 직접 터치로 화면을 테스트 할 수 있습니다.   
-큰 화면(Large Screen) 미리보기를 지원합니다.   
-애니메이션 프리뷰를 지원합니다.   
+KMP(Kotlin Multi-Platform) 프로젝트에 대한 테스트를 실행할 수 있습니다.   
+새로운 장치관리자가 추가되었습니다.   
+레이아웃 인스펙터에 새로운 기능이 추가되었습니다.   
+Compose의 시멘틱 검사를 지원합니다.   
+통합 Gradle 테스트 - 테스트 시 Gradle의 Android Gradle 테스트 러너를 사용합니다.   
 
 ### 2020.3.1 Arctic Fox   
-Jetpack Compose 지원 - 레이아웃 파일 없이 코드로만 화면을 구성할 수 있습니다.   
+Jetpack Compose 지원 - 레이아웃 파일 없이 코드로만 화면을 구성할 수 있습니다.    
 WearOS의 심박수 센서, Google TV를 지원하는 Android TV 에뮬레이터를 지원합니다.   
 AGP(Android Gradle plugin)로 기존 프로젝트를 업데이트 할 수 있습니다.   
-
+   
 ## Project List
    
 ### 1장 코틀린 안드로이드 이해하기   
