@@ -1,12 +1,12 @@
 # 이것이 안드로이드다 with 코틀린 - 3판 (3rd Edition)    
    
-Android 11(R), 12  
+Android 11(R), 12   
 Android Studio - Arctic Fox   
 
 - 3rd Edition (DEC 2021)   
   Added ActivityResultLauncher   
   Added Firebase   
-  (X) Removed ActivityResult
+  (X) Removed ActivityResult   
 
 - [2nd Edition (Apr 2021)](https://github.com/javafa/thisiskotlin/tree/master/2nd_edition)   
   Added ViewBinding   
@@ -14,8 +14,28 @@ Android Studio - Arctic Fox
   (X) Removed Kotlin Extension   
   (X) Removed Thread   
 
-- [1st Edition (Apr 2020)](https://github.com/javafa/thisiskotlin/tree/master/1st_edition)    
-  Published
+- [1st Edition (Apr 2020)](https://github.com/javafa/thisiskotlin/tree/master/1st_edition)   
+  Published   
+
+## Studio Release Note   
+
+### 안드로이드 스튜디오의 버전 지정 규칙 변경   
+기존 4.3으로 표기되는 숫자 방식에서 연도 표기와 함께 A~Z 이니셜로 시작하는 동물이름이 사용됩니다.
+예) 2020.3.1 - Arctic Fox   
+* 년도 뒤에 3.1은 월, 일 이 아니라 Major, Minor 또는 Patch 버전을 의미합니다.   
+   
+### 2020.3.1 Arctic Fox   
+Jetpack Compose 지원 - 레이아웃 파일 없이 코드로만 화면을 구성할 수 있습니다.   
+WearOS의 심박수 센서, Google TV를 지원하는 Android TV 에뮬레이터를 지원합니다.    
+AGP(Android Gradle plugin)로 기존 프로젝트를 업데이트 할 수 있습니다.   
+
+### 2021.1.1 Bumblebee   
+Compose 개선 - 에디터 화면에서 직접 터치로 화면을 테스트 할 수 있습니다.   
+큰 화면(Large Screen) 미리보기를 지원합니다.   
+애니메이션 프리뷰를 지원합니다.   
+
+### 2021.2.1 Chipmunk   
+확인중...   
 
 ## Project List
    
