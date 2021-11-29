@@ -3,7 +3,7 @@
 Android 11(R), 12   
 Android Studio - Arctic Fox   
 
-- 3rd Edition (DEC 2021)   
+- 3rd Edition (Dec 2021)   
   Added ActivityResultLauncher   
   Added Firebase   
   (X) Removed ActivityResult   
