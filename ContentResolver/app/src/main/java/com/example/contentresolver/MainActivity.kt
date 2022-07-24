@@ -1,7 +1,9 @@
 package com.example.contentresolver
 
+import android.Manifest
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -27,9 +29,12 @@ class MainActivity : AppCompatActivity() {
                 finish()
             }
         }
+
+        storagePermission.launch(Manifest.permission.READ_EXTERNAL_STORAGE)
     }
 
     fun startProcess() {
+        Log.d(localClassName, "cr===> startProcess")
         val adapter = MusicRecyclerAdapter()
         adapter.musicList.addAll(getMusicList())
         binding.recyclerView.adapter = adapter
